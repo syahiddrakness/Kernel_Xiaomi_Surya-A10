@@ -721,4 +721,7 @@ int dsi_display_get_panel_vfp(void *display,
 	int h_active, int v_active);
 
 int dsi_panel_set_feature(struct dsi_panel *panel, enum dsi_cmd_set_type type);
+
+struct dsi_display *get_main_display(void);
+
 #endif /* _DSI_DISPLAY_H_ */
