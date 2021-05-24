@@ -17,6 +17,9 @@ CONFIG_THERMAL_SUSPEND_RESUME=y
 # force fast charging
 CONFIG_FORCE_FAST_CHARGE=y
 
+# battery saver
+CONFIG_BATTERY_SAVER=y
+
 # wireguard
 CONFIG_WIREGUARD=y
 
