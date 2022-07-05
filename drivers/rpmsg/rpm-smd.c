@@ -1637,7 +1637,7 @@ static struct rpmsg_driver qcom_smd_rpm_driver = {
 	},
 };
 
-int __init msm_rpm_driver_init(void)
+static int __init msm_rpm_driver_init(void)
 {
 	unsigned int ret = 0;
 
