@@ -352,8 +352,8 @@
 			reg-names = "lpg-base", "lut-base";
 			#pwm-cells = <2>;
 			qcom,num-lpg-channels = <3>;
-			qcom,lut-patterns = <40 39 37 35 33 31 29 27 25 20 19
-						17 11 6 0 0 0 0 0 0 0>;
+			qcom,lut-patterns = <90 80 70 60 50 45 40 35 30 25 20
+						15 10 5 0 0 0 0 0 0 0>;
 			lpg1 {
 				qcom,lpg-chan-id = <1>;
 				qcom,ramp-step-ms = <100>;
@@ -455,18 +455,18 @@
 
 		trips {
 			pm6150l_trip0: trip0 {
-				temperature = <95000>;
-				hysteresis = <0>;
+				temperature = <500000>;
+				hysteresis = <500000>;
 				type = "passive";
 			};
 			pm6150l_trip1: trip1 {
-				temperature = <115000>;
-				hysteresis = <0>;
+				temperature = <500000>;
+				hysteresis = <500000>;
 				type = "passive";
 			};
 			trip2 {
-				temperature = <145000>;
-				hysteresis = <0>;
+				temperature = <500000>;
+				hysteresis = <500000>;
 				type = "passive";
 			};
 		};
@@ -482,8 +482,8 @@
 
 		trips {
 			vph_lvl0: vph-lvl0 {
-				temperature = <3000>;
-				hysteresis = <200>;
+				temperature = <0>;
+				hysteresis = <0>;
 				type = "passive";
 			};
 		};
@@ -499,8 +499,8 @@
 
 		trips {
 			vph_lvl1:vph-lvl1 {
-				temperature = <2750>;
-				hysteresis = <200>;
+				temperature = <0>;
+				hysteresis = <0>;
 				type = "passive";
 			};
 		};
@@ -516,8 +516,8 @@
 
 		trips {
 			vph_lvl2:vph-lvl2 {
-				temperature = <2500>;
-				hysteresis = <200>;
+				temperature = <0>;
+				hysteresis = <0>;
 				type = "passive";
 			};
 		};
@@ -532,8 +532,8 @@
 
 		trips {
 			l_bcl_lvl0: l-bcl-lvl0 {
-				temperature = <1>;
-				hysteresis = <1>;
+				temperature = <0>;
+				hysteresis = <0>;
 				type = "passive";
 			};
 		};
@@ -548,8 +548,8 @@
 
 		trips {
 			l_bcl_lvl1: l-bcl-lvl1 {
-				temperature = <1>;
-				hysteresis = <1>;
+				temperature = <0>;
+				hysteresis = <0>;
 				type = "passive";
 			};
 		};
@@ -564,10 +564,12 @@
 
 		trips {
 			l_bcl_lvl2: l-bcl-lvl2 {
-				temperature = <1>;
-				hysteresis = <1>;
+				temperature = <0>;
+				hysteresis = <0>;
 				type = "passive";
 			};
 		};
 	};
 };
+
+
