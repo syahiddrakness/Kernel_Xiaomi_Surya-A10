@@ -331,8 +331,6 @@ _copy_match:
 
 		length += MINMATCH;
 
-<<<<<<< HEAD
-=======
 		/* match starting within external dictionary */
 		if ((dict == usingExtDict) && (match < lowPrefix)) {
 			if (unlikely(op + length > oend - LASTLITERALS)) {
@@ -375,7 +373,6 @@ _copy_match:
 			continue;
 		}
 
->>>>>>> fee8211fbb32f (lib/lz4: update LZ4 decompressor module)
 		/* copy match within block */
 		cpy = op + length;
 
@@ -465,8 +462,6 @@ int LZ4_decompress_safe(const char *source, char *dest,
 				      compressedSize, maxDecompressedSize,
 				      endOnInputSize, decode_full_block,
 				      noDict, (BYTE *)dest, NULL, 0);
-<<<<<<< HEAD
-=======
 }
 
 int LZ4_decompress_safe_partial(const char *src, char *dst,
@@ -476,7 +471,6 @@ int LZ4_decompress_safe_partial(const char *src, char *dst,
 	return LZ4_decompress_generic(src, dst, compressedSize, dstCapacity,
 				      endOnInputSize, partial_decode,
 				      noDict, (BYTE *)dst, NULL, 0);
->>>>>>> fee8211fbb32f (lib/lz4: update LZ4 decompressor module)
 }
 
 int LZ4_decompress_fast(const char *source, char *dest, int originalSize)
@@ -485,8 +479,6 @@ int LZ4_decompress_fast(const char *source, char *dest, int originalSize)
 				      endOnOutputSize, decode_full_block,
 				      withPrefix64k,
 				      (BYTE *)dest - 64 * KB, NULL, 0);
-<<<<<<< HEAD
-=======
 }
 
 /* ===== Instantiate a few more decoding cases, used more than once. ===== */
@@ -709,7 +701,6 @@ int LZ4_decompress_fast_usingDict(const char *source, char *dest,
 
 	return LZ4_decompress_fast_extDict(source, dest, originalSize,
 		dictStart, dictSize);
->>>>>>> fee8211fbb32f (lib/lz4: update LZ4 decompressor module)
 }
 
 #ifndef STATIC
