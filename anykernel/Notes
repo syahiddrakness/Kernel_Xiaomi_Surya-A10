@@ -3807,13 +3807,13 @@
 #                                                  #
 ####################################################
 #                                                  #
-# - Name Kernel     = INTROVERT                    #
-# - Status          =                              #
-# - Category Kernel = GAMING                       #
+# - Name Kernel     = CABAI RAWIT                  #
+# - Status          = STABLE                       #
+# - Category Kernel = BALANCE (OVERVOLT)           #
 # - Device          = surya                        #
-# - Version Android = 11-12                        #
-# - Vendor          = VENDOR MIUI A10              #
-# - Build Date      = 01082023                     #
+# - Version Android = 10 & 11                      #
+# - Vendor          = MIUI A10                     #
+# - Build Date      = 15102023                     #
 # - Build Clock     =                              #
 #                                                  #
 ####################################################
@@ -3822,9 +3822,7 @@
 #                                                  #
 # CHANGELOG                                        #
 #                                                  #
-# KERNEL SABUN FOR SURYA                           #
-# - COMPILER WITH GCC 14+LTO                       #
-# - DISABLE ZRAM                                   #
+# KERNEL CABAI RAWIT FOR SURYA                     #
 # - IMPROVER & STABILIZER PERFORMANCE              #
 # - FIXED MORE BUGS                                #
 # - AND MORE                                       #
