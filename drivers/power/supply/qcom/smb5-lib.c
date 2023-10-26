@@ -6631,14 +6631,14 @@ static int qc3p5_authenticate(struct smb_charger *chg)
 		return rc;
 	}
 
-	/* SRC CAP 7V for 18W */
+	/* SRC CAP 7V for 33W */
 	if ((vbus_uv >= VBUS_6P65_V_UV)
 			&& (vbus_uv <= VBUS_7P35_V_UV))
-		chg->qc3p5_power_limit_w = 18;
-	/* SRC CAP 8V for 27W */
+		chg->qc3p5_power_limit_w = 33;
+	/* SRC CAP 8V for 40W */
 	else if ((vbus_uv >= VBUS_7P6_V_UV)
 			&& (vbus_uv <= VBUS_8P4_V_UV))
-		chg->qc3p5_power_limit_w = 27;
+		chg->qc3p5_power_limit_w = 40;
 	/* SRC CAP 9V for 40W */
 	else if ((vbus_uv >= VBUS_8P55_V_UV)
 			&& (vbus_uv <= VBUS_9P8_V_UV)) {
