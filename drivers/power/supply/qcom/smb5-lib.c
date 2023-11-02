@@ -6555,7 +6555,7 @@ static int qc3p5_authenticate(struct smb_charger *chg)
 
 	chg->qc3p5_authenticated = false;
 	chg->qc3p5_authentication_started = true;
-	chg->qc3p5_power_limit_w = 40;//Default to lowest power limit of 40W
+	chg->qc3p5_power_limit_w = 27;//Default to lowest power limit of 27W
 
 	/* Set ICL to 500mA during QC3.5 Authentication */
 	vote(chg->usb_icl_votable, QC3P5_VOTER, true, USBIN_500MA);
@@ -6634,7 +6634,7 @@ static int qc3p5_authenticate(struct smb_charger *chg)
 	/* SRC CAP 7V for 18W */
 	if ((vbus_uv >= VBUS_6P65_V_UV)
 			&& (vbus_uv <= VBUS_7P35_V_UV))
-		chg->qc3p5_power_limit_w = 28;
+		chg->qc3p5_power_limit_w = 18;
 	/* SRC CAP 8V for 27W */
 	else if ((vbus_uv >= VBUS_7P6_V_UV)
 			&& (vbus_uv <= VBUS_8P4_V_UV))
