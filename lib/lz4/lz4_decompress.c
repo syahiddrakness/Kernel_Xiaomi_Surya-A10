@@ -91,7 +91,7 @@ static FORCE_INLINE int LZ4_decompress_generic(
 	static const int dec64table[8] = {0, 0, 0, -1, -4, 1, 2, 3};
 
 	const int safeDecode = (endOnInput == endOnInputSize);
-	const int checkOffset = ((safeDecode) && (dictSize < (int)(64 * KB)));
+	const int checkOffset = ((safeDecode) && (dictSize < (int)(512* KB)));
 
 	/* Set up the "end" pointers for the shortcut. */
 	const BYTE *const shortiend = iend -
@@ -418,7 +418,7 @@ int LZ4_decompress_fast(const char *source, char *dest, int originalSize)
 	return LZ4_decompress_generic(source, dest, 0, originalSize,
 				      endOnOutputSize, decode_full_block,
 				      withPrefix64k,
-				      (BYTE *)dest - 64 * KB, NULL, 0);
+				      (BYTE *)dest - 512* KB, NULL, 0);
 
 }
 
