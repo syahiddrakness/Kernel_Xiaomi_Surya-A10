@@ -451,7 +451,7 @@
 	qcom,fcc-max-ua = <6000000>;
 	qcom,fv-max-uv = <4480000>;
 	qcom,chg-term-src = <1>;
-	qcom,chg-term-current-ma = <(-10)>;
+	qcom,chg-term-current-ma = <(-3000)>;
 	qcom,sw-jeita-enable;
 	//qcom,fcc-stepping-enable;
 	qcom,suspend-input-on-debug-batt;
@@ -464,7 +464,7 @@
 	qcom,charger-temp-max = <1500>;
 	qcom,smb-temp-max = <1500>;
 	qcom,fcc-step-delay-ms = <10>;
-	qcom,fcc-step-size-ua = <100000>;
+	qcom,fcc-step-size-ua = <300000>;
 	qcom,disable-sw-thermal-regulation;
 	qcom,disable-fcc-restriction;
 	qcom,smb-internal-pull-kohm = <0>;
@@ -487,7 +487,7 @@
 &pm6150_pdphy {
 	mi,non-qcom-pps-ctrl;
 	mi,pd_curr_limit = <1>;
-	mi,pd_max_curr_limit = <4000000>;
+	mi,pd_max_curr_limit = <4480000>;
 	mi,limit_pd_unverified_pps_vbus = <1>;
 	mi,pd_unverified_pps_max_vbus_limit = <9500000>;
 };
