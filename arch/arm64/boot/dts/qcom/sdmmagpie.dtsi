@@ -389,7 +389,6 @@
 
 		CPU_COST_0: core-cost0 {
 			busy-cost-data = <
-				busy-cost-data = <
 				576000	8
 				768000	16
 				1017600	32
