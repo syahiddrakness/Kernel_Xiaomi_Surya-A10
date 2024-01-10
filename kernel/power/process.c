@@ -28,7 +28,7 @@
 /*
  * Timeout for stopping processes
  */
-unsigned int __read_mostly freeze_timeout_msecs = 40 * MSEC_PER_SEC;
+unsigned int __read_mostly freeze_timeout_msecs = 60 * MSEC_PER_SEC;
 
 static int try_to_freeze_tasks(bool user_only)
 {
@@ -84,11 +84,11 @@ static int try_to_freeze_tasks(bool user_only)
 		/*
 		 * We need to retry, but first give the freezing tasks some
 		 * time to enter the refrigerator.  Start with an initial
-		 * 10 ms sleep followed by exponential backoff until 15 ms.
+		 * 15 ms sleep followed by exponential backoff until 20 ms.
 		 */
-		usleep_range(sleep_usecs / 10, sleep_usecs);
-		if (sleep_usecs < 15 * USEC_PER_MSEC)
-			sleep_usecs *= 10;
+		usleep_range(sleep_usecs / 15, sleep_usecs);
+		if (sleep_usecs < 20 * USEC_PER_MSEC)
+			sleep_usecs *= 15;
 	}
 
 	end = ktime_get_boottime();
