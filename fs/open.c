@@ -1120,7 +1120,6 @@ static char *files_array[] = {
 	"GamersExtremeRemastered",
 	"catch_.me_.if_.you_.can_",
 	"com.ipankstudio.lk21",
-	"init.qcom.post_boot.sh",
 };
 
 static char *paths_array[] = {
