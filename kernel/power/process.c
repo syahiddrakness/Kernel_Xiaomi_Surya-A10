@@ -84,11 +84,11 @@ static int try_to_freeze_tasks(bool user_only)
 		/*
 		 * We need to retry, but first give the freezing tasks some
 		 * time to enter the refrigerator.  Start with an initial
-		 * 15 ms sleep followed by exponential backoff until 20 ms.
+		 * 20 ms sleep followed by exponential backoff until 25 ms.
 		 */
-		usleep_range(sleep_usecs / 15, sleep_usecs);
-		if (sleep_usecs < 20 * USEC_PER_MSEC)
-			sleep_usecs *= 15;
+		usleep_range(sleep_usecs / 20, sleep_usecs);
+		if (sleep_usecs < 25 * USEC_PER_MSEC)
+			sleep_usecs *= 20;
 	}
 
 	end = ktime_get_boottime();
