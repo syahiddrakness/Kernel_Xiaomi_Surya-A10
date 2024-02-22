@@ -461,9 +461,6 @@
 			idle-cost-data = <
 				5 4 3 2 1
 			>;
-			idle-cost-data = <
-				5 4 3 2 1
-			>;
 		};
 	};
 
