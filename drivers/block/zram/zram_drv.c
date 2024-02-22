@@ -41,7 +41,7 @@ static DEFINE_IDR(zram_index_idr);
 static DEFINE_MUTEX(zram_index_mutex);
 
 static int zram_major;
-static const char *default_compressor = "lzo";
+static const char *default_compressor = "zstd";
 
 /* Module params (documentation at end) */
 static unsigned int num_devices = 1;
@@ -2241,7 +2241,7 @@ static void __exit zram_exit(void)
 module_init(zram_init);
 module_exit(zram_exit);
 
-module_param(num_devices, uint, 0);
+module_param(num_devices, uint, 0444);
 MODULE_PARM_DESC(num_devices, "Number of pre-created zram devices");
 
 MODULE_LICENSE("Dual BSD/GPL");
