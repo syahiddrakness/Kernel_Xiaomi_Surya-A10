@@ -12,7 +12,6 @@
 #include <linux/devfreq.h>
 #include <linux/module.h>
 #include "governor.h"
-lude "governor.h"
 
 
 #ifdef CONFIG_KPROFILES
