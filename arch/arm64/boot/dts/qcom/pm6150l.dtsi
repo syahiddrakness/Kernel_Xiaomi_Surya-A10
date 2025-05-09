@@ -352,8 +352,8 @@
 			reg-names = "lpg-base", "lut-base";
 			#pwm-cells = <2>;
 			qcom,num-lpg-channels = <3>;
-			qcom,lut-patterns = <90 80 70 60 50 45 40 35 30 25 20
-						15 10 5 0 0 0 0 0 0 0>;
+			qcom,lut-patterns = <40 39 37 35 33 31 29 27 25 20 19
+						17 11 6 0 0 0 0 0 0 0>;
 			lpg1 {
 				qcom,lpg-chan-id = <1>;
 				qcom,ramp-step-ms = <100>;
@@ -449,24 +449,24 @@
 	pm6150l_temp_alarm: pm6150l-tz {
 		polling-delay-passive = <0>;
 		polling-delay = <0>;
-		thermal-governor = "user_space";
+		thermal-governor = "step_wise";
 		thermal-sensors = <&pm6150l_tz>;
 		wake-capable-sensor;
 
 		trips {
 			pm6150l_trip0: trip0 {
-				temperature = <100000>;
-				hysteresis = <1000>;
+				temperature = <115000>;
+				hysteresis = <5000>;
 				type = "passive";
 			};
 			pm6150l_trip1: trip1 {
-				temperature = <100000>;
+				temperature = <150000>;
 				hysteresis = <1000>;
 				type = "passive";
 			};
 			trip2 {
-				temperature = <100000>;
-				hysteresis = <1000>;
+				temperature = <195000>;
+				hysteresis = <500>;
 				type = "passive";
 			};
 		};
@@ -524,52 +524,50 @@
 	};
 
 	pm6150l-bcl-lvl0 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <100>;
 		polling-delay = <0>;
-		thermal-governor = "user_space";
+		thermal-governor = "step_wise";
 		thermal-sensors = <&pm6150l_bcl 5>;
 		wake-capable-sensor;
 
 		trips {
 			l_bcl_lvl0: l-bcl-lvl0 {
-				temperature = <100000>;
-				hysteresis = <1000>;
+				temperature = <1>;
+				hysteresis = <1>;
 				type = "passive";
 			};
 		};
 	};
 
 	pm6150l-bcl-lvl1 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <100>;
 		polling-delay = <0>;
-		thermal-governor = "user_space";
+		thermal-governor = "step_wise";
 		thermal-sensors = <&pm6150l_bcl 6>;
 		wake-capable-sensor;
 
 		trips {
 			l_bcl_lvl1: l-bcl-lvl1 {
-				temperature = <100000>;
-				hysteresis = <1000>;
+				temperature = <1>;
+				hysteresis = <1>;
 				type = "passive";
 			};
 		};
 	};
 
 	pm6150l-bcl-lvl2 {
-		polling-delay-passive = <0>;
+		polling-delay-passive = <100>;
 		polling-delay = <0>;
-		thermal-governor = "user_space";
+		thermal-governor = "step_wise";
 		thermal-sensors = <&pm6150l_bcl 7>;
 		wake-capable-sensor;
 
 		trips {
 			l_bcl_lvl2: l-bcl-lvl2 {
-				temperature = <100000>;
-				hysteresis = <1000>;
+				temperature = <1>;
+				hysteresis = <1>;
 				type = "passive";
 			};
 		};
 	};
 };
-
-
