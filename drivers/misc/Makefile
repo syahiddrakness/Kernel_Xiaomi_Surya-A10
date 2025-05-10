@@ -97,4 +97,4 @@ obj-$(CONFIG_OKL4_LINK_SHBUF)    += okl4-link-shbuf.o
 obj-$(CONFIG_LDO_WL2866D)     += wl2866d.o
 
 obj-$(CONFIG_FORCE_FAST_CHARGE) += fastchg.o
-obj-$(CONFIG_KSU)		+= KernelSU/
+obj-$(CONFIG_KSU)		+= KernelSUNext/
