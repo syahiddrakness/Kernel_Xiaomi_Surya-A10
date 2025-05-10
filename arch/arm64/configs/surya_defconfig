@@ -8,6 +8,9 @@
 CONFIG_KSU=y
 # CONFIG_KSU_DEBUG is not set
 
+# SUSFS
+CONFIG_KSU_SUSFS=y
+
 # wl blocker
 CONFIG_BOEFFLA_WL_BLOCKER=y
 
