@@ -82,7 +82,7 @@
 		qcom,ubwc-mode = <2>;
 
 		/* size in bytes */
-		qcom,snapshot-size = <0x800000>;
+		qcom,snapshot-size = <0x80000000>;
 
 		/* base addr, size */
 		qcom,gpu-qdss-stm = <0x161c0000 0x40000>;
@@ -108,21 +108,21 @@
 				<26 512 0 0>,
 				<26 512 0 400000>,      /*  1 bus=100  */
 				<26 512 0 800000>,      /*  2 bus=200  */
-				<26 512 0 1200000>,     /*  3 bus=300  */
-				<26 512 0 1804000>,     /*  4 bus=451  */
-				<26 512 0 2188000>,     /*  5 bus=547  */
-				<26 512 0 2724000>,     /*  6 bus=681  */
-				<26 512 0 3300000>,     /*  7 bus=825  */
-				<26 512 0 4068000>,     /*  8 bus=1017 */
-				<26 512 0 5412000>,     /*  9 bus=1353 */
-				<26 512 0 6220000>,     /* 10 bus=1555 */
-				<26 512 0 7216000>,     /* 11 bus=1804 */
-				<26 512 0 8888000>,     /* 12 bus=2092 */
-				<26 512 0 11000000>,    /* 13 bus=2300 */
-				<26 512 0 12000000>,    /* 14 bus=2500 */
-				<26 512 0 13000000>,    /* 15 bus=2700 */
-				<26 512 0 14000000>,    /* 16 bus=3000 */
-				<26 512 0 15000000>;    /* 17 bus=3200 */
+				<26 512 0 1100000>,     /*  3 bus=300  */
+				<26 512 0 2200000>,     /*  4 bus=451  */
+				<26 512 0 3300000>,     /*  5 bus=547  */
+				<26 512 0 4400000>,     /*  6 bus=681  */
+				<26 512 0 5500000>,     /*  7 bus=825  */
+				<26 512 0 6600000>,     /*  8 bus=1017 */
+				<26 512 0 7700000>,     /*  9 bus=1353 */
+				<26 512 0 8800000>,     /* 10 bus=1555 */
+				<26 512 0 9900000>,     /* 11 bus=1804 */
+				<26 512 0 10000000>,    /* 12 bus=2092 */
+				<26 512 0 12000000>,    /* 13 bus=2300 */
+				<26 512 0 14000000>,    /* 14 bus=2500 */
+				<26 512 0 16000000>,    /* 15 bus=2700 */
+				<26 512 0 18000000>,    /* 16 bus=3000 */
+				<26 512 0 20000000>;    /* 17 bus=3200 */
 
 		/* GDSC regulator names */
 		regulator-names = "vddcx", "vdd";
@@ -135,8 +135,8 @@
 		cache-slices = <&llcc 12>, <&llcc 11>;
 
 		/* CPU latency parameter */
-		qcom,pm-qos-active-latency = <120>;
-		qcom,pm-qos-wakeup-latency = <120>;
+		qcom,pm-qos-active-latency = <1500>;
+		qcom,pm-qos-wakeup-latency = <1500>;
 
 		/* Enable context aware freq. scaling */
 		qcom,enable-ca-jump;
@@ -144,6 +144,18 @@
 		qcom,ca-busy-penalty = <12000>;
 
 		qcom,gpu-speed-bin = <0x41a0 0x1fe00000 21>;
+
+		qcom,gpu-models {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			compatible="qcom,gpu-models";
+
+			qcom,gpu-model@0 {
+				qcom,gpu-model-id = <0>;
+				qcom,gpu-model = "Adreno750";
+				qcom,vk-device-id= <0x06030500>;
+			};
+		};		
 
 		/* GPU Mempools */
 		qcom,gpu-mempools {
@@ -285,8 +297,8 @@
 
 				qcom,speed-bin = <172>;
 
-				qcom,initial-pwrlevel = <7>;
-				qcom,ca-target-pwrlevel = <7>;
+				qcom,initial-pwrlevel = <6>;
+				qcom,ca-target-pwrlevel = <6>;
 
 				qcom,gpu-pwrlevel@0 {
 					reg = <0>;
@@ -456,8 +468,8 @@
 
 				qcom,speed-bin = <128>;
 
-				qcom,initial-pwrlevel = <5>;
-				qcom,ca-target-pwrlevel = <5>;
+				qcom,initial-pwrlevel = <7>;
+				qcom,ca-target-pwrlevel = <7>;
 
 				/* NOM_L1 */
 				qcom,gpu-pwrlevel@0 {
@@ -591,7 +603,7 @@
 					reg = <6>;
 					qcom,gpu-freq = <250000000>;
 					qcom,bus-freq = <9>;
-					qcom,bus-min = <7>;
+					qcom,bus-min = <5>;
 					qcom,bus-max = <9>;
 				};
 
@@ -599,9 +611,9 @@
 				qcom,gpu-pwrlevel@7 {
 					reg = <7>;
 					qcom,gpu-freq = <150000000>;
-					qcom,bus-freq = <7>;
-					qcom,bus-min = <5>;
-					qcom,bus-max = <7>;
+					qcom,bus-freq = <6>;
+					qcom,bus-min = <3>;
+					qcom,bus-max = <6>;
 				};
 
 				/* XO */
@@ -630,8 +642,8 @@
 		clock-names = "iface_clk", "mem_clk", "mem_iface_clk";
 
 		qcom,secure_align_mask = <0xfff>;
+		qcom,unmap_fast;
 		qcom,retention;
-                qcom,unmap_fast;
 		qcom,hyp_secure_alloc;
 
 		gfx3d_user: gfx3d_user {
