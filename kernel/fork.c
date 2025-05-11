@@ -2118,7 +2118,7 @@ long _do_fork(unsigned long clone_flags,
 		switch (kp_active_mode()) {
 		case 0:
 		case 1:
-			cpu_input_boost_kick_max(30);
+			cpu_input_boost_kick_max(0);
 			devfreq_boost_kick_max(DEVFREQ_MSM_LLCCBW, 0);
 			devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 0);
 			break;
@@ -2133,9 +2133,9 @@ long _do_fork(unsigned long clone_flags,
 			devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 120);
 			break;
 		case 4:
-			cpu_input_boost_kick_max(300);
-			devfreq_boost_kick_max(DEVFREQ_MSM_LLCCBW, 300);
-			devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 300);
+			cpu_input_boost_kick_max(600);
+			devfreq_boost_kick_max(DEVFREQ_MSM_LLCCBW, 600);
+			devfreq_boost_kick_max(DEVFREQ_MSM_CPUBW, 600);
 			break;
 		default:
 			break;
